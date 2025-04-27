@@ -1,0 +1,108 @@
+# FindUrCar - WBS (Work Breakdown Structure)
+
+## 1. Planlama
+- 1.1 WBS oluşturulması
+- 1.2 Proje planı hazırlanması
+
+## 2. Backend Geliştirme
+- 2.1 Kullanıcı kayıt API’si geliştirme
+- 2.2 Kullanıcı giriş API’si geliştirme
+- 2.3 Araba ilanı oluşturma API’si
+- 2.4 Veritabanı tasarımı
+
+## 3. Frontend Geliştirme
+- 3.1 Kullanıcı kayıt formu tasarımı
+- 3.2 Ana sayfa araba listeleme ekranı
+- 3.3 Araba detay sayfası
+
+## 4. Test Süreci
+- 4.1 Backend API testleri
+- 4.2 Frontend işlevsellik testleri
+- 4.3 Filtre sisteminin test edilmesi
+
+## 5. Deployment
+- 5.1 Sunucu kurulumu ve yapılandırılması
+- 5.2 Backend ve Frontend kodlarının yüklenmesi
+- 5.3 Veritabanı entegrasyonu
+
+## 6. Problem Çözümü
+- 6.1 API performans problemlerinin giderilmesi
+- 6.2 Frontend hatalarının düzeltilmesi
+
+
+
+# FindUrCar - Proje Planı
+
+## Proje İsmi:
+FindUrCar
+
+## Proje Tanımı:
+İkinci el araba aramak isteyen kullanıcılar için ilan açıp arama yapılabilecek bir web platformu geliştirilmesi.
+
+## Başlangıç Tarihi:
+27 Nisan 2025
+
+## Bitiş Tarihi:
+27 Mayıs 2025
+
+## Ekip Üyeleri:
+- Ahmet Yılmaz (Backend Developer)
+- Ayşe Demir (Frontend Developer)
+- Berk Can (Database & Deployment Sorumlusu)
+- Derya Şahin (Test Mühendisi)
+- Ural İbar (Proje Yöneticisi)
+
+## Hedefler:
+- Minimum Viable Product (MVP) sürümünü tamamlamak.
+- Kullanıcı kayıt ve giriş işlevlerini güvenli şekilde sağlamak.
+- Araba ilanlarının oluşturulması ve listelenmesi.
+- Basit arama ve filtreleme sisteminin kurulması.
+- Web platformunun canlıya alınması.
+
+## Araçlar:
+- Django + Django Rest Framework (Backend)
+- React.js (Frontend)
+- PostgreSQL (Veritabanı)
+- Docker (Deployment)
+- AWS EC2 (Sunucu)
+
+## Riskler:
+- API performans problemleri
+- Frontend/Backend entegrasyon hataları
+- Veritabanı bağlantı sorunları
+- Zaman yönetimi zorlukları
+
+
+
+# FindUrCar - Zaman Çizelgesi
+
+## Hafta 1 (27 Nisan - 3 Mayıs)
+- Organizasyon ve görev paylaşımı yapılacak.
+- WBS ve Proje Planı hazırlanacak.
+
+## Hafta 2 (4 Mayıs - 10 Mayıs)
+- Backend API geliştirme başlanacak (Kullanıcı kayıt ve giriş).
+- Frontend temel yapı kurulacak (Sign Up ve Login sayfaları).
+
+## Hafta 3 (11 Mayıs - 17 Mayıs)
+- Araba ilanı API’si geliştirilecek.
+- Ana sayfa araba listeleme ekranı yapılacak.
+
+## Hafta 4 (18 Mayıs - 24 Mayıs)
+- Test süreçleri başlayacak.
+- Filtreleme sistemi ve detay sayfası geliştirilecek.
+
+## Hafta 5 (25 Mayıs - 27 Mayıs)
+- Deployment işlemleri yapılacak.
+- Son testler ve hata düzeltmeleri tamamlanacak.
+- Proje sunumu için hazırlık yapılacak.
+
+---
+
+# Milestones:
+- 3 Mayıs 2025: Planlama tamamlandı.
+- 10 Mayıs 2025: Temel API ve Frontend yapı hazır.
+- 17 Mayıs 2025: Ana fonksiyonlar tamamlandı.
+- 24 Mayıs 2025: Testler ve iyileştirmeler yapıldı.
+- 27 Mayıs 2025: Proje canlıya alındı.
+
