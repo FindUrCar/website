@@ -1,0 +1,59 @@
+5. Veritabanı Yönetimi✅
+5.1. Kullanıcı Veritabanı Modeli Oluşturulması✅
+5.2. Araba İlanı Veritabanı Modeli Oluşturulması✅
+5.3. Yorum Veritabanı Modeli Oluşturulması✅
+5.4. Veritabanı İlişkileri Tanımlanması✅
+5.5. Veritabanı Migration’ları Yapılması✅
+5.6. Veritabanı Yedekleme ve Geri Yükleme✅
+5.7. Veritabanı Performans Optimizasyonu✅
+
+6. Test ve Kalite Güvence✅
+6.1. Test Senaryoları Oluşturulması✅
+6.2. Backend API Testlerinin Yapılması✅
+6.3. Frontend UI Testlerinin Yapılması✅
+6.4. Performans Testleri✅
+6.5. Güvenlik Testleri✅
+6.6. Beta Testleri ve Kullanıcı Geri Bildirimleri✅
+6.7. Test Sonuçları Raporlanması✅
+6.8. Hata ve İyileştirme Raporu Hazırlanması✅
+6.9. Kullanıcı Testlerinin Gerçekleştirilmesi✅
+
+7. Yayın ve Dağıtım✅
+7.1. Yayın Öncesi Son Kontroller✅
+7.2. Prodüksiyon Ortamına Geçiş✅
+7.3. Yayın ve İzleme✅
+7.4. Kullanıcı Eğitimi ve Dökümantasyon✅
+7.5. Yayın Sonrası İzleme ve Geri Bildirim✅
+7.6. Veritabanı Güncellemeleri ve Yedeklemeleri✅
+
+8. Proje Kapanışı✅
+8.1. Son Raporlama ve Analiz✅
+8.2. Proje Sonuçlarının Değerlendirilmesi✅
+8.3. Proje Kapanış Toplantısı✅
+8.4. Son Geri Bildirimler ve İyileştirmeler✅
+8.5. Proje Belgelerinin Arşivlenmesi✅
+
+WBS Detayları:
+1. Proje Yönetimi ve Planlama✅
+Proje yönetimi sürecinde görevlerin takibi, planlama ve risk yönetimi yapılacak. Bu bölümde proje başlangıç toplantısı ve iletişim planı gibi temel adımlar atılacak.
+
+2. Analiz ve Tasarım✅
+Gereksinimler belirlendikten sonra veritabanı ve API tasarımı yapılacak. UI/UX tasarımları da bu aşamada gerçekleştirilip, prototipler incelenerek son tasarım kararları verilecek.
+
+3. Backend Geliştirme✅
+Backend geliştirme sürecinde kullanıcı kayıt ve giriş API’leri, araba ilanları API’leri, yorum API’leri gibi temel işlevler geliştirilecek. API testleri, hata yönetimi ve zaman aşımı yönetimi de bu süreçte yapılacak.
+
+4. Frontend Geliştirme✅
+Frontend tarafında kullanıcı kayıt formu, giriş formu, ilan sayfaları ve arayüz geliştirmeleri yapılacak. UI/UX testleri de bu aşamada gerçekleştirilecek.
+
+5. Veritabanı Yönetimi✅
+Veritabanı tarafında kullanıcılar, ilanlar ve yorumlar için modeller oluşturulacak. Ayrıca ilişkiler kurulacak ve veritabanı migration işlemleri yapılacak. Veritabanı performansı optimizasyonu da sağlanacak.
+
+6. Test ve Kalite Güvence✅
+Tüm sistemin düzgün çalıştığından emin olmak için test senaryoları oluşturulacak ve farklı testler yapılacak (API testleri, UI testleri, güvenlik testleri vb.). Kullanıcı testleri ve geri bildirimler de alınacak.
+
+7. Yayın ve Dağıtım✅
+Yayın öncesi son kontroller yapıldıktan sonra uygulama prodüksiyon ortamına alınacak. Yayın sonrası izleme yapılacak ve kullanıcı eğitimi sağlanacak.
+
+8. Proje Kapanışı✅
+Proje kapanışında tüm dokümantasyon tamamlanacak, proje sonuçları değerlendirilecek ve son geri bildirimler alınarak proje resmi olarak kapanacak.
