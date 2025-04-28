@@ -1,0 +1,69 @@
+
+
+services:
+  web:
+    build: ./web
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/ecommerce
+      - REDIS_URL=redis://redis:6379/0
+      - DJANGO_SETTINGS_MODULE=ecommerce.settings
+    depends_on:
+      - db
+      - redis
+      - llm
+    volumes:
+      - ./web:/app
+    networks:
+      - ecommerce_network
+
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ecommerce
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce_network
+
+  redis:
+    image: redis:7
+    networks:
+      - ecommerce_network
+
+  worker:
+    build: ./web
+    command: celery -A ecommerce worker --loglevel=info
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/ecommerce
+      - REDIS_URL=redis://redis:6379/0
+      - DJANGO_SETTINGS_MODULE=ecommerce.settings
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ./web:/app
+    networks:
+      - ecommerce_network
+
+  llm:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: always
+    networks:
+      - ecommerce_network
+
+volumes:
+  postgres_data:
+  ollama_data:
+
+networks:
+  ecommerce_network:
+    driver: bridge

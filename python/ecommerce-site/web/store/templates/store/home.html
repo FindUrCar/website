@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acubutik</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Linklerin tıklanabilir olmasını sağla */
+        .product-box a {
+            display: block; /* Tüm kutuyu tıklanabilir hale getir */
+            text-decoration: none; /* Alt çizgiyi kaldır */
+            color: inherit; /* Linklerin rengi normal metinle aynı olsun */
+        }
+
+        /* Ürün kutusunun renk ve stil ayarları */
+        .product-container .product-box {
+            display: block;
+            margin: 10px;
+        }
+
+        /* Ürün adlarının rengini ve diğer stil ayarlarını düzenleyin */
+        .product-details h3 {
+            color: #333; /* Ürün adlarının rengi */
+        }
+
+        .product-details p {
+            color: #555; /* Fiyat metninin rengi */
+        }
+
+        .product-description {
+            display: none; /* Açıklamayı gizle */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-kategori">
+            <!-- Kategoriler Dropdown -->
+            <button class="icon-button" onclick="toggleCategories()">☰ Kategoriler</button>
+            <div id="category-menu" class="category-menu">
+                <ul>
+                    <li><a href="#">Kategori 1</a></li>
+                    <li><a href="#">Kategori 2</a></li>
+                    <li><a href="#">Kategori 3</a></li>
+                    <li><a href="#">Kategori 4</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-logo">
+            <a href="/" class="site-adi">Acubutik</a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search">
+                <!-- Arama Formu -->
+                <form method="GET" action="{% url 'search' %}">
+                    <input type="text" name="q" class="search-box" placeholder="Ara..." value="{{ request.GET.q }}">
+                    <button type="submit" class="search-btn">Ara</button>
+                </form>
+            </div>
+            <div class="nav-profile">
+                <button class="icon-button">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main style="margin-top: 80px;">
+
+        <!-- Tıklanabilir Görsel -->
+        <a href="http://localhost:8000/products" target="_blank">
+            <img src="{% static 'images/banner.jpg' %}" alt="Banner" style="width:100%; height:auto; margin-bottom: 30px;">
+        </a>
+
+        <!-- Çok Satanlar Başlığı -->
+        <h1 style="text-align: left; margin-left: 20px;">Çok Satanlar</h1>
+
+        <!-- Ürünlerimiz Bölümü -->
+        <div class="product-container">
+            {% for product in random_products %}
+                <div class="product-box">
+                    <a href="{% url 'product_detail' product.id %}"> <!-- Tıklanabilir ürün linki -->
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                        {% else %}
+                            <img src="{% static 'images/default.jpg' %}" alt="Resim bulunamadı" class="product-image">
+                        {% endif %}
+                        
+                        <div class="product-details">
+                            <h3>{{ product.name }}</h3>
+                            <p>{{ product.price }} TL</p>
+                            <!-- Ürün açıklaması sadece detay sayfasında görünsün -->
+                            <p class="product-description">{{ product.description }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </main>
+
+    <script>
+        function toggleCategories() {
+            var menu = document.getElementById('category-menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

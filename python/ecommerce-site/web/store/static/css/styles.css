@@ -1,0 +1,279 @@
+/* Genel stil */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar stili */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+/* Navbar sol, ortada ve sağdaki öğeler */
+.nav-left, .nav-center, .nav-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar ortada yer alan logo */
+.nav-center {
+    justify-content: center;
+}
+
+/* Navbar sol ve sağdaki öğeler */
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+/* Icon butonları */
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.icon-button:hover {
+    color: #ff7f50; /* Hover rengi */
+}
+
+/* Navbar logo */
+.site-adi {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-box {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+main {
+    padding: 80px 20px 20px; /* Navbar'dan sonra bir boşluk bırakmak için */
+    text-align: center;
+}
+
+/* Navbar logo'yu ortalamak için */
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+}
+
+.nav-logo a:hover {
+    color: #ff7f50; /* Hover rengini belirle */
+}
+
+/* Kategoriler dropdown menü */
+.category-menu {
+    display: none; /* Başlangıçta gizli */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.category-menu ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ürün listesi düzeni */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: flex-start; /* Soldan başla, sağda boşluk bırak */
+}
+
+/* Ürün kutularının düzeni */
+.product-box {
+    width: 18%; /* 5 ürün için uygun genişlik */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+a {
+    text-decoration: none;  /* Alt çizgiyi kaldır */
+    color: inherit;
+}
+
+/* Ürün görsellerinin düzeni */
+.product-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Ürün ismi ve fiyatı */
+.product-details h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+/*GAP
+
+
+/* Ürün Detay Sayfası */
+/* Ürün Detay Sayfası */
+.product-detail-main {
+    padding: 80px 20px 20px; /* Navbar'dan sonra bir boşluk bırakmak için */
+}
+
+/* Ürün Detayları Düzeni */
+.product-detail-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start; /* Dikey hizalama */
+    margin-right: 20%; /* Sol tarafına boşluk ekledik */
+}
+
+/* Sol: Ürün Resmi */
+.product-image-container {
+    width: 100%;
+    max-width: 500px; /* Resim için maksimum genişlik */
+    flex-shrink: 0; /* Resmin sıkışmamasını sağlamak */
+    margin-left: 25%; /* Resmin sol tarafına boşluk ekledik */
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain; /* Resmin boyutunu düzgün şekilde sığdırır */
+}
+
+/* Sağ: Ürün Bilgileri */
+.product-info {
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    margin-right: 20px; /* Ürün detaylarının sağ tarafına boşluk ekledik */
+}
+
+.product-info h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #e63946;
+    margin: 10px 0;
+}
+
+.product-info-text {
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    margin-top: 20px;
+}
+
+.product-info-text:hover {
+    color: #e25f55;
+}
+
+
+/* Ürün Açıklaması */
+.product-description {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sepete Ekleme Butonu */
+.add-to-cart-btn {
+    padding: 15px 30px;
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    border: #333 solid 1px; /* Kenar rengi ve kalınlığı */
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Butonu tüm genişlikte yaparak mobilde kolay erişilebilir kılalım */
+    max-width: 220px; /* Maksimum genişlik */
+    text-align: center; /* Butonun metnini ortalayalım */
+}
+
+.add-to-cart-btn:hover {
+    background-color: #009124;
+}
+
+.add-to-cart-btn:focus {
+    outline: none;
+}
+
+
+
+

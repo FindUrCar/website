@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Acubutik</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-kategori">
+            <!-- Kategoriler Dropdown -->
+            <button class="icon-button" onclick="toggleCategories()">☰ Kategoriler</button>
+            <div id="category-menu" class="category-menu">
+                <ul>
+                    <li><a href="#">Kategori 1</a></li>
+                    <li><a href="#">Kategori 2</a></li>
+                    <li><a href="#">Kategori 3</a></li>
+                    <li><a href="#">Kategori 4</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-logo">
+            <a href="/" class="site-adi">Acubutik</a>
+        </div>
+        <div class="nav-right">
+            <div class="nav-search">
+                <!-- Arama Formu -->
+                <form method="GET" action="{% url 'search' %}">
+                    <input type="text" name="q" class="search-box" placeholder="Ara..." value="{{ request.GET.q }}">
+                    <button type="submit" class="search-btn">Ara</button>
+                </form>
+            </div>
+            <div class="nav-profile">
+                <button class="icon-button">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-detail-main">
+        <!-- Ürün Detayları -->
+        <div class="product-detail-container">
+            <!-- Sol: Ürün Resmi -->
+            <div class="product-image-container">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}" alt="Resim bulunamadı">
+                {% endif %}
+            </div>
+
+            <!-- Sağ: Ürün Bilgileri -->
+            <div class="product-info">
+                <h1>{{ product.name }}</h1>
+                <p class="product-price">{{ product.price }} TL</p>
+            
+                <!-- Sepete Ekleme Butonu -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name="add_to_cart" class="add-to-cart-btn">Sepete Ekle</button>
+                </form>
+            
+                <!-- Ürün Bilgisi Yazısı -->
+                <p class="product-info-text" onclick="toggleDescription()">Ürün Bilgisi</p>
+                
+                <!-- Ürün Açıklaması -->
+                <div id="product-description" class="product-description">
+                    <p>{{ product.description }}</p>
+                </div>
+            </div>
+    </main>
+
+    <script>
+        // Ürün açıklamasını göstermek için fonksiyon
+        function toggleDescription() {
+            var description = document.getElementById("product-description");
+            var btn = document.querySelector(".product-info-btn");
+
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+                btn.textContent = "Ürün Bilgisi Kapat";
+            } else {
+                description.style.display = "none";
+                btn.textContent = "Ürün Bilgisi";
+            }
+        }
+    </script>
+
+</body>
+</html>
